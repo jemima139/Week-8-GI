@@ -4,16 +4,26 @@
 // a function called 'exerciseOfTheDay' with a variable presentExercise is created.
 function exerciseOfTheDay() {
     let presentExercise = "";
-//This function returns another function, which takes an argument called 'exercise'.
+
+   
     return function(exercise) {
         if (exercise) {
             presentExercise = exercise;
             console.log("Today's exercise:", presentExercise);
-        } 
-}
+        }
+        
+        return presentExercise;
+    };
 }
 
 
+const exercise = exerciseOfTheDay();
+
+
+console.log(exercise("Running")); // Output: Today's exercise: Running
+console.log(exercise("Swimming")); // Output: Today's exercise: Swimming
+console.log(exercise("Dancing")); // Output: Today's exercise: Dancing
+console.log(exercise("Fencing")); // Output: Today's exercise: Fencing
 
 
 
